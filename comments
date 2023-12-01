@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!------------Made by Muhammad Huzaifa---------------->
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b5f4641468.js" crossorigin="anonymous"></script>
+    <script defer src="app.js"></script>
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinguoAI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel = "shortcut icon" type = "image/png" href = "https://redirect-ai.vercel.app/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  </head>
+  <body>
+  <div class="sidebar">
+    <div class="logo">
+      <!-- Replace 'logo.png' with the path to your logo image -->
+      <img src="images/c__6_-removebg-preview.png" alt="Logo" height="50" width="50">
+    </div>
+    <a href="#headers" class="active"><i class="fas fa-home"></i></a>
+    <a href="#openai"><i class="fas fa-cogs"></i></a>
+    <a href="#update"><i class="fas fa-bullhorn"></i></a>
+    <a href="#about"><i class="fas fa-info-circle"></i></a>
+    <div class="desktop-copyright">
+      August 5, 2023. LinguoAi: version 3.1
+    </div>
+  </div>
+  <script>
+    // Get all the <a> elements inside the sidebar
+    const sidebarLinks = document.querySelectorAll('.sidebar a');
+    
+    // Function to handle the scroll event
+    function handleScroll() {
+      // Get the scroll position
+      const scrollPosition = window.scrollY;
+    
+      // Loop through each <a> element and check if its corresponding section is in the viewport
+      sidebarLinks.forEach(link => {
+        const sectionId = link.getAttribute('href');
+        const section = document.querySelector(sectionId);
+    
+        if (section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+          // If the section is in the viewport, add the "active" class to the link
+          link.classList.add('active');
+        } else {
+          // Otherwise, remove the "active" class from the link
+          link.classList.remove('active');
+        }
+      });
+    }
+    
+    // Attach the scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    </script>    
+
+  <div class="mobile-sidebar">
+    <div class="logo">
+      <img src="images/c__6_-removebg-preview.png" alt="Logo" height="50" width="50">
+    </div>
+  </div>
+
+  <div class="mobile-menu">
+    <div class="logo">
+      <img src="images/c__6_-removebg-preview.png" alt="Logo" height="50" width="50">
+    </div>
+    <a href="#headers"><i class="fas fa-home"></i> Home</a>
+    <a href="#openai"><i class="fas fa-cogs"></i> How it works</a>
+    <a href="#update"><i class="fas fa-bullhorn"></i> New Update</a>
+    <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+    <div class="close-button">
+      <i class="fas fa-times"></i>
+    </div>
+  </div>
+
+  <script>
+    const mobileSidebar = document.querySelector('.mobile-sidebar');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const closeButton = document.querySelector('.close-button');
+
+    mobileSidebar.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+    });
+
+    closeButton.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+    });
+  </script>
+    <section class="one">
+      <div id="headers">
+        <h1>The Future of Artficial <br> Intelligence...</h1>
+        <p><span class="auto-type"></span></p>
+        <a href="#openai" class = "btn">Read more <i style="padding-left: 10px" class="fa-solid fa-up-right-from-square"></i></a>
+      </div>
+    </section>   
+  
+    <div class="banner">
+      <span class="close-icon">&times;</span>
+      <p><b>Version 3.0 is out! 🥳🎉🎉</b></p>
+    </div>    
+    <!------------OpenAI---------------->
+    <section class="two">
+      <div id="openai">
+        <img src="images/My project.png" alt="LinguoAI" id="display">
+        <p><span>LinguoAI, the independent bot,</span> combines the power of Botpress, a versatile platform for seamless <br> user interaction, with multiple online knowledge bases to provide accurate and up-to-date factual information. Additionally, it leverages Unsplash's vast image database to generate visually captivating and unique <br> images, enhancing the overall user experience with its dynamic and innovative capabilities.</p>
+      </div>
+    </section>
+
+    <!---------------Version 3.0------------------>
+    <section class="three">
+        <div id="update">
+          <h3>Version 3.0!</h3>
+          <p><span>The long awaited</span> version 3.0 is finally here, heres what its got to offer.</p>
+        </div>
+      <div class="philosophy-list">
+        <div>
+            <h2>Image support</h2>
+            <p>Unlock a world of visual enchantment with LinguoAI's image generation feature. Powered by Unsplash, our bot seamlessly integrates a vast array of captivating and unique images into every interaction. Immerse yourself in a visually stimulating experience as LinguoAI brings information to life through high-quality visuals. With each conversation, our bot ensures that every encounter is engaging, dynamic, and visually delightful, enhancing the overall user experience. Discover the power of images in communication and let LinguoAI captivate your senses as it delivers knowledge with an artistic touch.          </p>
+        </div>
+        <div>
+            <h2>Complete personality rewrite</h2>
+            <p>LinguoAI now uses less professional but more entertaining and engaging conversational flows. Instead of being the same old boring AI that you talk to, it now understands and uses humour everywhere. It incorporates humour and sarcasm in quiete many aspects and never lets you down while consistently using emojis and giving you a chuckle.</p>
+        </div>
+        <div>
+            <h2>Chat memory</h2>
+            <p>The bot can now refer back to previous chats! This may seem like a small addition but has unlocked many more things you can now do with LinguoAI. You can now ask follow up questions or ask it to explain something further and much more!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="four">
+      <div id="try">
+        <h3>Try now for free!</h3>
+        <p><span>Click on the widget</span> in the bottom-right to open the chat window.</p>
+    </div>  
+    </section>
+ 
+    <!------------About---------------->
+    <section class="five">
+      <div id="about">
+        <h3>About</h3>
+        <p><span>LinguoAI is a fun little personal project</span> that I made and is in no way intended for professional purposes. <br> LinguoAI 3.0 is an AI language model or a conversation model that can answer questions for you, write summaries, <br> explain things, give you recipes, solve math, generate images and much more! Try it out for yourself for free.</p>    
+      </div>
+    </section>
+
+    <!--------Food-------->
+    <section class="six">
+      <div id="end">
+        <h1>Experience the future at your fingertips</h1>
+        <p>Did you know The first version of LinguoAI was released on May 9, 2023</p>
+        <h3>hi</h3>
+      </div>
+    </section>
+    
+    
+      <script src="script.js"></script>
+    <!------------JavaScript---------------->
+    
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+
+    <script>
+      var typed = new Typed(".auto-type", {
+        strings: ["LinguoAI 3.0 brings the best of all cards to the table"],
+        typeSpeed: 50,
+        backSpeed: 0,
+        loop: false
+      })
+      var typed2 = new Typed(".type", {
+        strings: ["Thank you for checking out ChatBot!", "We hope to see you again soon..."],
+        typeSpeed: 100,
+        backSpeed: 75,
+        loop: true
+      })
+    </script>
+    	<script>
+        const cookieBox = document.getElementById('cookie-box');
+        const cupcakeBox = document.getElementById('cupcake-box');
+        const popcornBox = document.getElementById('popcorn-box');
+    
+        const yummyFace = '&#x1F60B;';
+    
+        cookieBox.addEventListener('click', () => {
+          cookieBox.innerHTML = yummyFace;
+        });
+    
+        cupcakeBox.addEventListener('click', () => {
+          cupcakeBox.innerHTML = yummyFace;
+        });
+    
+        popcornBox.addEventListener('click', () => {
+          popcornBox.innerHTML = yummyFace;
+        });
+      </script>   
+      <script src="./confetti.js"></script> 
+      <script>
+        const start = () => {
+          setTimeout(function(){
+            confetti.start();
+          },1000);
+        };
+        const stop = () => {
+          setTimeout(function(){
+            confetti.stop();
+          },5000);
+        };
+        start();
+        stop();
+      </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const banner = document.querySelector(".banner");
+          const closeIcon = document.querySelector(".close-icon");
+
+          closeIcon.addEventListener("click", function () {
+            banner.classList.add("banner-close");
+          });
+        });
+      </script>
+  </body>
+</html>
