@@ -6,6 +6,13 @@ html, body {
     background-color: #161616;
     scroll-behavior: smooth;
   }
+  .games h1{
+  font-family: 'Russo One', sans-serif;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 30px;
+  height: 100vh;
+}
   .games{
   font-family: 'Russo One', sans-serif;
   text-align: center;
