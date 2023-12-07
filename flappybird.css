@@ -1,3 +1,12 @@
+
+
+#board {
+    background-image: url("./flappybirdbg.png");
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
@@ -6,7 +15,9 @@
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
-
+.tooltip{
+  color: #000;
+}
 .sidebar{
   position: fixed;
   left: 0;
@@ -17,9 +28,6 @@
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
-}
-.tooltip{
-  color: #000;
 }
 .sidebar.open{
   width: 250px;
@@ -399,14 +407,28 @@ p {
   transition-delay: inherit;
 }
 
-
+.play-button {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  transition: 0.5s;
+}
+.play-button svg {
+  overflow: visible;
+}
+.play-button .polygon {
+  fill: #16e590;
+  transition: transform 0.5s, fill 0.5s;
+  transition-timing-function: cubic-bezier(0.7, 0.01, 0.37, 1);
+  transform-origin: 50% 50%;
+}
 
 .card {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  max-width: 400px;
+  max-width: 370px;
   width: 100%;
   height: 200px;
   padding: 20px;
@@ -437,6 +459,10 @@ p {
 }
 .card:hover .play-button {
   transform: scale(1.1);
+}
+.card:hover .play-button .polygon {
+  transform: translateZ(0px) rotate(90deg);
+  fill: #67fbbe;
 }
 .card:hover .roll-up > span > span:nth-child(1) {
   transform: translateY(-100%);

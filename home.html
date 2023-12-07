@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameNet</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b5f4641468.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="nav-wrapper">
+        <nav id="title">
+            <a href="#" class="hover-this" ><span><img id="logo" src="images/Untitled_design__19_-removebg-preview.png" alt=""></span></a>
+            <a href="#" class="hover-this" ><span id="game">GameNet</span></a>
+            <div class="cursor"></div>
+        </nav>
+        <a href="index.html" class = "btn">Play! <i style="padding-left: 10px" class="fa-solid fa-play"></i></a>
+        <nav id="subtitle">
+            <h1>GameNet hosts your favorite games <br> unblocked in one website 100% ad-free!</h1>
+        </nav>
+    </div>
+    <div class="games" id="games">
+        <h2>ABOUT</h2>
+    </div>
+    
+
+
+
+
+<!---JAVASCRIPT--->
+<script>
+    (function () {
+
+        const link = document.querySelectorAll('nav > .hover-this');
+        const cursor = document.querySelector('.cursor');
+
+        const animateit = function (e) {
+            const span = this.querySelector('span');
+            const { offsetX: x, offsetY: y } = e,
+            { offsetWidth: width, offsetHeight: height } = this,
+
+            move = 25,
+            xMove = x / width * (move * 2) - move,
+            yMove = y / height * (move * 2) - move;
+
+            span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+
+            if (e.type === 'mouseleave') span.style.transform = '';
+        };
+
+        const editCursor = e => {
+            const { clientX: x, clientY: y } = e;
+            cursor.style.left = x + 'px';
+            cursor.style.top = y + 'px';
+        };
+
+        link.forEach(b => b.addEventListener('mousemove', animateit));
+        link.forEach(b => b.addEventListener('mouseleave', animateit));
+        window.addEventListener('mousemove', editCursor);
+
+    })();
+</script>
+</body>
+</html>
