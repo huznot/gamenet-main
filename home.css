@@ -25,6 +25,12 @@ html, body {
     font-size: 35px;
     align-items: center;
   }
+ .thing{
+    margin-top: 50px;
+ }
+ .games i{
+     margin-top:30px;
+ }
   #logo{
     height: 370px;
     margin-top: 50px;
