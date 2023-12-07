@@ -16,6 +16,16 @@ html, body {
   ::selection{
     background-color: #6fa4d6;
   }
+.thing{
+    margin-top: 50px;
+     text-align: center;
+    position: absolute;
+    color: #fff;
+    top: 10%;
+    font-family: 'Share', sans-serif;
+    font-size: 35px;
+    align-items: center;
+ }
   h1{
     text-align: center;
     position: absolute;
@@ -25,9 +35,7 @@ html, body {
     font-size: 35px;
     align-items: center;
   }
- .thing{
-    margin-top: 50px;
- }
+ 
  .games i{
      margin-top:30px;
  }
