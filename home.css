@@ -44,6 +44,10 @@ h3{
  
  .games i{
      margin-top:30px;
+     transition: all 0.4s;
+ }
+.games i:hover{
+     transform: scale(1.3);
  }
   #logo{
     height: 370px;
