@@ -245,25 +245,25 @@
         
     </section>
     <script>
-      let sidebar = document.querySelector(".sidebar");
+      let sidebar = document.querySelector(".sidebar"); //assigns variable to HTML classes
       let closeBtn = document.querySelector("#btn");
       let searchBtn = document.querySelector(".bx-search");
 
-      closeBtn.addEventListener("click", ()=>{
+      closeBtn.addEventListener("click", ()=>{ //listens for click and triggers function
         sidebar.classList.toggle("open");
         menuBtnChange();
       });
 
-      searchBtn.addEventListener("click", ()=>{ 
+      searchBtn.addEventListener("click", ()=>{ //listens for click and triggers function for the search button
         sidebar.classList.toggle("open");
         menuBtnChange(); 
       });
 
       function menuBtnChange() {
-      if(sidebar.classList.contains("open")){
-        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+      if(sidebar.classList.contains("open")){ //checks if open was called
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replaces the icons
       }else {
-        closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+        closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replaces the icons 
       }
       }
     </script>
