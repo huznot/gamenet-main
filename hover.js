@@ -1,19 +1,11 @@
 // inspiration: https://www.valerian.bnpparibas/en
 
-// tilt.js
-
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
         define(['jquery'], factory);
     } else if (typeof module === 'object' && module.exports) {
-        // Node/CommonJS
         module.exports = function( root, jQuery ) {
             if ( jQuery === undefined ) {
-                // require('jQuery') returns a factory that requires window to
-                // build a jQuery instance, we normalize how we use modules
-                // that require this pattern but the window provided is a noop
-                // if it's defined (how jquery works)
                 if ( typeof window !== 'undefined' ) {
                     jQuery = require('jquery');
                 }
@@ -29,14 +21,12 @@
         factory(jQuery);
     }
 }(function ($) {
-    $.fn.tilt = function (options) {
+    $.fn.tilt = function (options) {  //basically sets configuration for a tilt plugin from jquery
+                                            // SOURCE: https://gijsroge.github.io/tilt.js/
 
-        /**
-         * RequestAnimationFrame
-         */
         const requestTick = function() {
             if (this.ticking) return;
-            requestAnimationFrame(updateTransforms.bind(this));
+            requestAnimationFrame(updateTransforms.bind(this)); 
             this.ticking = true;
         };
 
@@ -48,8 +38,8 @@
             $(this).on('mousemove', mouseMove);
             $(this).on('mouseenter', mouseEnter);
             if (this.settings.reset) $(this).on('mouseleave', mouseLeave);
-            if (this.settings.glare) $(window).on('resize', updateGlareSize.bind(_this));
-        };
+            if (this.settings.glare) $(window).on('resize', updateGlareSize.bind(_this)); 
+        }; //this adds mouse events in a single function so it is easier to call later on
 
         /**
          * Set transition only on mouse leave and mouse enter so it doesn't influence mouse move transforms
@@ -76,18 +66,15 @@
             $(this).trigger("tilt.mouseEnter");
         };
 
-        /**
-         * Return the x,y position of the mouse on the tilt element
-         * @returns {{x: *, y: *}}
-         */
-        const getMousePositions = function(event) {
-            if (typeof(event) === "undefined") {
+        
+        const getMousePositions = function(event) { 
+            if (typeof(event) === "undefined") { //checks if the event parameter has not been called(the mouse is on the card)
                 event = {
-                    pageX: $(this).offset().left + $(this).outerWidth() / 2,
+                    pageX: $(this).offset().left + $(this).outerWidth() / 2,  //this calculates where exactly the mouse is so it can tilt
                     pageY: $(this).offset().top + $(this).outerHeight() / 2
                 };
             }
-            return {x: event.pageX, y: event.pageY};
+            return {x: event.pageX, y: event.pageY}; //returns these mouse values
         };
 
         /**
@@ -111,9 +98,7 @@
         };
 
         /**
-         * Get tilt values
-         *
-         * @returns {{x: tilt value, y: tilt value}}
+         * This whole piece of code just basically tilts the card !IMP!
          */
         const getValues = function() {
             const width = $(this).outerWidth();
@@ -122,7 +107,6 @@
             const top = $(this).offset().top;
             const percentageX = (this.mousePositions.x - left) / width;
             const percentageY = (this.mousePositions.y - top) / height;
-            // x or y position inside instance / width of instance = percentage of position inside instance * the max tilt value
             const tiltX = ((this.settings.maxTilt / 2) - ((percentageX) * this.settings.maxTilt)).toFixed(2);
             const tiltY = (((percentageY) * this.settings.maxTilt) - (this.settings.maxTilt / 2)).toFixed(2);
             // angle
